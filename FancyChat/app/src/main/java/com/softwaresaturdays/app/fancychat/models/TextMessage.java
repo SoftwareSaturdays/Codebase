@@ -1,6 +1,9 @@
 package com.softwaresaturdays.app.fancychat.models;
 
+// Child class of a Message
 public class TextMessage extends Message {
+
+    // Text is the only addition
     private String text;
 
     public TextMessage() {

@@ -20,27 +20,25 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        // Reference UI elements
         mSignIn = findViewById(R.id.sign_in_button);
         final EditText etName = findViewById(R.id.etName);
         etName.requestFocus();
 
+        // Set a listener to run code whenever the sign in button is clicker
         mSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (etName.getText().toString().isEmpty()) {
+                    // Show notification if no name has been entered
                     Snackbar.make(mSignIn, "Please enter name", Snackbar.LENGTH_SHORT).show();
                 } else {
+                    // Create an intent and pass in the user's name to the ChatActivity
                     Intent chatIntent = new Intent(LoginActivity.this, ChatActivity.class);
                     chatIntent.putExtra("name", etName.getText().toString());
                     startActivity(chatIntent);
                 }
             }
         });
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-
     }
 }

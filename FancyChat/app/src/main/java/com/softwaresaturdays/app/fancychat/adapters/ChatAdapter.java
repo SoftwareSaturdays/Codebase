@@ -24,25 +24,28 @@ public class ChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         this.messages = messages;
     }
 
+    // A ViewHolder is a fundamental view of each item in the list
     class ChatViewHolder extends RecyclerView.ViewHolder {
         private TextView tvTextMessage;
         private RoundedImageView ivProfilePic;
 
         ChatViewHolder(View itemView) {
             super(itemView);
+            // Reference items in the layout
             tvTextMessage = itemView.findViewById(R.id.tvTextMessage);
             ivProfilePic = itemView.findViewById(R.id.ivProfileInMessage);
         }
     }
 
+    // All statements in the callback called after the item view is
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent,
                                                       int viewType) {
 
-        // create a new view
+        // create a new item view
         View itemView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item_message, parent, false);
-        // set the view's size, margins, padding and layout parameters
+
         return new ChatViewHolder(itemView);
     }
 
@@ -51,15 +54,20 @@ public class ChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         final ChatViewHolder chatViewHolder = (ChatViewHolder) viewHolder;
         final Message message = messages.get(position);
 
+        // Check if it's a text message
         if (message.getType().equals(Message.TYPE_TEXT_MESSAGE)) {
+
+            // Cast the message to textMessage
             TextMessage textMessage = (TextMessage) message;
+
+            // set the text
             chatViewHolder.tvTextMessage.setText(textMessage.getText());
         }
 
         chatViewHolder.ivProfilePic.setImageResource(R.drawable.ic_account_circle_black_36dp);
     }
 
-    // Return the size of your dataset (invoked by the layout manager)
+    // Return the size of your dataset
     @Override
     public int getItemCount() {
         return messages.size();

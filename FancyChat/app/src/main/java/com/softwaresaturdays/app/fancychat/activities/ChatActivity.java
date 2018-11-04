@@ -37,14 +37,15 @@ public class ChatActivity extends AppCompatActivity {
 
     // Refresh the recycler view with updated messages
     private void refreshRecyclerView(ArrayList<Message> messages) {
-        // Update messages REAL-TIME and update list view
-        mMessages = messages;
-        mChatAdapter = new ChatAdapter(ChatActivity.this, mMessages);
+
+        // Create a new adapter to update the chat list
+        mChatAdapter = new ChatAdapter(ChatActivity.this, messages);
         if (mRvChat != null) {
             mRvChat.setAdapter(mChatAdapter);
         }
     }
 
+    // Scrolling to the end using a layout manager
     private void scrollToEnd() {
         mLayoutManager.scrollToPosition(mChatAdapter.getItemCount() - 1);
     }
@@ -93,9 +94,7 @@ public class ChatActivity extends AppCompatActivity {
 
     private void setupChatList() {
         mChatAdapter = new ChatAdapter(this, mMessages);
-
         mLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
-
         mRvChat.setAdapter(mChatAdapter);
         mRvChat.setLayoutManager(mLayoutManager);
         scrollToEnd();
