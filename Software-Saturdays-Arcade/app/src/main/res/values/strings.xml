@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Arcade</string>
+
+    <string name="host_label">Host:\nShow a joinee this code!</string>
+    <string name="join_label">Join:\nType someone\'s host code!</string>
+    <string name="join_code_hint">Enter game code!</string>
+
+    <string name="twenty_forty_eight">2048</string>
+    <string name="score"><u>Score</u></string>
+    <string name="restart">Restart</string>
+
+    <string name="ex">X</string>
+    <string name="oh">O</string>
+    <string name="your_turn">Your Turn!</string>
+    <string name="opponents_turn">Opponent\'s Turn!</string>
+    <string name="win">You win!</string>
+    <string name="lose">You lose :\'(</string>
+    <string name="tie">Tie game!</string>
+</resources>
