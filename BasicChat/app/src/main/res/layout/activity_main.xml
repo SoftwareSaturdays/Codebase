@@ -5,13 +5,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/tvMessage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:padding="16dp"
-        android:text="SAMPLE" />
+    <!--TODO Create a TextView with id tvMessage centered in the parent layout-->
 
     <!--
     "toLeftof", "toRightOf", "alignTop", "alignBottom"  type properties only available in RelativeLayout

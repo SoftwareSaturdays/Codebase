@@ -14,9 +14,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final TextView tvMessage = findViewById(R.id.tvMessage);
         Button btnSend = findViewById(R.id.btnSend);
         final EditText etMessage = findViewById(R.id.etMessage);
+
+        // TODO Create a TextView object called tvMessage and find it by id tvMessage
 
         // A listener is an interface that listens to events and automatically calls a function
         btnSend.setOnClickListener(new View.OnClickListener() {
@@ -25,9 +26,9 @@ public class MainActivity extends AppCompatActivity {
                 // Following statements executed when the button is pressed
                 String enteredText = etMessage.getText().toString();
 
-                if (!enteredText.isEmpty()) {
-                    tvMessage.setText(enteredText);
-                }
+                // TODO Check to see if the text entered by the user is not empty
+
+                // TODO Set the tvMessage to display the text entered by the user
             }
         });
 
