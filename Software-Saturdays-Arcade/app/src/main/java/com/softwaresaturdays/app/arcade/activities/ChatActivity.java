@@ -291,10 +291,10 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
                 }.start();
                 break;
             case R.id.ivProfile:
-                PopupMenu popupMenu = new PopupMenu(ChatActivity.this, mIvProfile);
-                popupMenu.setOnMenuItemClickListener(ChatActivity.this);
-                popupMenu.inflate(R.menu.popup_menu);
-                popupMenu.show();
+                // TODO implement a PopupMenu to show the menu represented by "popup_menu.xml"
+                // HINT: Set menu item click listener to ChatActivity.this so following
+                // onMenuItemClick() is called automatically when menu item is clicker
+
         }
 
     }

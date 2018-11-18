@@ -42,14 +42,9 @@ public class Util {
     }
 
     public static void storeUserData(ArrayList<User> users, Context context) {
-        SharedPreferences prefs = context.getSharedPreferences(PREF, Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = prefs.edit();
-
-        for (User user : users) {
-            editor.putString(user.getUid(), user.toString());
-        }
-
-        editor.apply();
+        // TODO Store users info in shared preferences
+        // Hint: look at other methods for hints
+        // Use user UID for key and User toString() for value
     }
 
     public static void storeGameData(ArrayList<Game> games, Context context) {

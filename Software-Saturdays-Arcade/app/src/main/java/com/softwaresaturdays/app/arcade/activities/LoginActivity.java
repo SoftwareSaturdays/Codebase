@@ -63,8 +63,10 @@ public class LoginActivity extends AppCompatActivity {
         // the GoogleSignInAccount will be non-null.
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
 
+        // To prevent notifications pop up if app is in foregroung
         MyApplication.isForeground = true;
 
+        // Store all users info for quickly showing profile pics - NOT RECOMMENDED FOR PRODUCTION
         DatabaseHelper.getAllUsersInfo(new DatabaseHelper.OnUserInfoFetchListener() {
             @Override
             public void onUserInfoFetched(User user) {

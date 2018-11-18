@@ -7,10 +7,10 @@ import java.util.HashMap;
 public class User {
     private String email;
     private String name;
-    private String photoUrl;
-    private String uid;
-    private String fcmToken;
-    private HashMap<String, Double> highScores;
+    private String photoUrl; // google profile pic url automatic through google sign-in
+    private String uid; // unique id automatically assigned by Firebase to a user
+    private String fcmToken; // unique token used by Firebase to identify a user's device for notifications
+    private HashMap<String, Double> highScores; // hashmap of user's high scores for games "game"->"score"
 
     public User() {
 
