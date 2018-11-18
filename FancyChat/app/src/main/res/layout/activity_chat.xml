@@ -5,12 +5,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rvChat"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="64dp"
-        android:padding="10dp" />
+    <!--TODO Add RecyclerView with id rvChat -->
 
     <RelativeLayout
         android:id="@+id/rlBottomBar"

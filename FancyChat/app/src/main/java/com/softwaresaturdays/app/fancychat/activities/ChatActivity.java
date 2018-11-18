@@ -69,6 +69,7 @@ public class ChatActivity extends AppCompatActivity {
         mIvProfile = findViewById(R.id.ivProfile);
         mEtTextMessage = findViewById(R.id.etTextMessage);
 
+        // Get the author name from the intent
         final String author = getIntent().getStringExtra("name");
 
         mIvProfile.setImageResource(R.drawable.ic_account_circle_black_36dp);
@@ -81,10 +82,11 @@ public class ChatActivity extends AppCompatActivity {
                 if (text.isEmpty()) {
                     Snackbar.make(mRvChat, "Please enter searchText", Snackbar.LENGTH_SHORT).show();
                 } else {
-                    Message message = new TextMessage(text, author);
-                    mMessages.add(message);
-                    refreshRecyclerView(mMessages);
+                    // TODO Create a new textmessage object and refresh recycler view
+
                 }
+
+                // Set edittext to empty
                 mEtTextMessage.setText("");
             }
         });

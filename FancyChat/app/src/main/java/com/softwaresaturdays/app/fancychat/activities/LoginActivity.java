@@ -1,8 +1,6 @@
 package com.softwaresaturdays.app.fancychat.activities;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -21,7 +19,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         // Reference UI elements
-        mSignIn = findViewById(R.id.sign_in_button);
+        // TODO find and reference the id of mSignIn button
         final EditText etName = findViewById(R.id.etName);
         etName.requestFocus();
 
@@ -29,16 +27,18 @@ public class LoginActivity extends AppCompatActivity {
         mSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (etName.getText().toString().isEmpty()) {
-                    // Show notification if no name has been entered
-                    Snackbar.make(mSignIn, "Please enter name", Snackbar.LENGTH_SHORT).show();
-                } else {
-                    // Create an intent and pass in the user's name to the ChatActivity
-                    Intent chatIntent = new Intent(LoginActivity.this, ChatActivity.class);
-                    chatIntent.putExtra("name", etName.getText().toString());
-                    startActivity(chatIntent);
-                }
+                processSignInInfo(etName.getText().toString());
             }
         });
+    }
+
+    // TODO implement the function. Take in entered name and check if it is empty
+    private void processSignInInfo(String username) {
+        if (username.isEmpty()) {
+            // TODO if name is empty, show a Snackbar to prompt user to enter a name
+        } else {
+            // TODO Else, create an intent to start the ChatActivity and pass over the name value
+            // HINT: chatIntent.putExtra("name", username);
+        }
     }
 }

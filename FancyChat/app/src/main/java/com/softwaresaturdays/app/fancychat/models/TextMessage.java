@@ -3,8 +3,8 @@ package com.softwaresaturdays.app.fancychat.models;
 // Child class of a Message
 public class TextMessage extends Message {
 
+    // TODO Add a String data member for a text
     // Text is the only addition
-    private String text;
 
     public TextMessage() {
         super();
@@ -12,10 +12,9 @@ public class TextMessage extends Message {
 
     public TextMessage(String text, String author) {
         super(System.currentTimeMillis(), author, Message.TYPE_TEXT_MESSAGE);
+
         this.text = text;
     }
 
-    public String getText() {
-        return text;
-    }
+    // TODO Add a getter for text
 }
