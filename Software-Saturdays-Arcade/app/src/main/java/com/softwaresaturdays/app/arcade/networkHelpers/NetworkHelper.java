@@ -26,8 +26,8 @@ public class NetworkHelper {
 
                 try {
                     // Create URL with parameters
-                    String url_GIPHY = "https://api.giphy.com/v1/gifs/translate" +
-                            "?api_key=" + "V8yx6xS8lx22xE9C6PK9jDdMJj0aGA7j" + "&s=" + searchText + "&weirdness=5";
+                    // TODO initialize the url with appropriate parameters including the searchText
+                    String url_GIPHY;
 
                     URL giphyEndpoint = new URL(url_GIPHY);
 
@@ -114,6 +114,7 @@ public class NetworkHelper {
             JsonObject jsonObject = (JsonObject) jsonParser.parse(
                     new InputStreamReader(responseBody, "UTF-8"));
 
+            // HINT: Look at the GIF Object documentation
             JsonObject gif = jsonObject.getAsJsonObject("data");
             JsonObject images = gif.getAsJsonObject("images");
 

@@ -99,9 +99,8 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
                 }
             }
         });
-        if (mRvChat != null) {
-            mRvChat.setAdapter(mChatAdapter);
-        }
+
+        mRvChat.setAdapter(mChatAdapter);
     }
 
     private void scrollToEnd() {
@@ -151,7 +150,6 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
         mIvProfile = findViewById(R.id.ivProfile);
         mEtTextMessage = findViewById(R.id.etTextMessage);
         CardView cvPlayButton = findViewById(R.id.cvPlayButton);
-        mSwipeContainer = findViewById(R.id.swipeContainer);
 
         // Needed to set global state - used to check that notifications are not displayed when app is foreground
         MyApplication.isForeground = true;

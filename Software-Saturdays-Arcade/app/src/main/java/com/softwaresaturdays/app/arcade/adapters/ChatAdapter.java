@@ -11,7 +11,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestOptions;
 import com.makeramen.roundedimageview.RoundedImageView;
 import com.softwaresaturdays.app.arcade.MyApplication;
 import com.softwaresaturdays.app.arcade.R;
@@ -32,7 +31,6 @@ public class ChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     public ChatAdapter(Context context, ArrayList<Message> messages, OnItemClickListener listener) {
         this.mContext = context;
         this.messages = messages;
-        this.onItemClickListener = listener;
     }
 
     class ChatViewHolder extends RecyclerView.ViewHolder {
@@ -78,15 +76,8 @@ public class ChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             chatViewHolder.ivGif.setVisibility(View.VISIBLE);
             chatViewHolder.tvTextMessage.setText(gifMessage.searchText);
 
-            // Adding placeholder loading image while the GIF loads
-            RequestOptions requestOptions = new RequestOptions();
-            requestOptions.placeholder(R.drawable.progress);
-            requestOptions.error(R.drawable.progress);
-
-            Glide.with(chatViewHolder.ivGif)
-                    .setDefaultRequestOptions(requestOptions)
-                    .load(gifMessage.getUrl())
-                    .into(chatViewHolder.ivGif);
+            // TODO Display GIF in ivGif
+            // BONUS: add a placeholder "progress" drawable while loading
         }
 
         // Set extra info about the message's time and author
